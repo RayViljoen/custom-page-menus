@@ -52,6 +52,11 @@ class CustomPagesWidget extends WP_Widget {
 	             	}
              	echo '</ul>';
              	echo  $after_widget;
+	      
+	      else:
+	      	
+	      	echo '<span style="display: none;">'.$cpMenu.'</span>'
+	      
 	      endif;
     }
     /** @see WP_Widget::update */
