@@ -55,7 +55,7 @@ class CustomPagesWidget extends WP_Widget {
 	      
 	      else:
 	      	
-	      	echo '<span style="display: none;">'.$cpMenu.'</span>'
+	      	echo '<span style="display: none;">'.$cpMenu.'</span>';
 	      
 	      endif;
     }
