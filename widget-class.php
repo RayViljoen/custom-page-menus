@@ -13,7 +13,7 @@ class CustomPagesWidget extends WP_Widget {
         extract( $args );
         $title = apply_filters('widget_title', $instance['title']);
         $sortby = empty( $instance['sortby'] ) ? 'menu_order' : $instance['sortby'];
-		$thumb = $instance['thumb'];
+	$thumb = isset($instance['thumb']) ? $instance['thumb'] : NULL;
 
         $include_IDs = get_post_custom_values('custom-pages');
         if (isset($include_IDs[0])){
@@ -29,7 +29,7 @@ class CustomPagesWidget extends WP_Widget {
 	             	foreach ($cpMenu as $page) 
 	             	{	
 	             		echo '<li class="custom-pages-menu-item">';
-	             		if ($featured_image && $thumb){
+	             		if ((isset( $featured_image) && $featured_image) && $thumb){
 	             			echo '<a href="';
 		             		echo get_permalink($page->ID).'" class="custom-pages-menu-thumb" title="';
 		             		echo $page->post_name.'">';
